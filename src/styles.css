@@ -3,90 +3,87 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: 'Cabin', sans-serif;
 }
 
+/* WELCOME PAGE */
 
 .text-position1{
+    position: relative;
     bottom: 250px;
-    left: 1200px;
-    width: 400px;
+    right: 50px;
+    width: 300px;
 }
 
 .text-position2{
-    bottom: 350px;
-    left: 750px;
-    width:400px;
+    top: 35%;
+    left: 40%;
+    width: 300px;
 }
 
 .text-position3{
+    position: relative;
     bottom: 550px;
     left: 30px;
-    width: 500px;
+    width: 360px;
 }
 
 .welcome_page_text{
-    font-size: 80px;
+    font-size: 100px;
     color: white;
     position: absolute;
     font-family: 'Abril Fatface', serif;
+    
 }
+
 .input{
     position: absolute;
-    width:360px;
-    margin-bottom: -30px;
+    bottom: -40px;
+    left: 0px;
+    width:300px;
     padding: 5px;
     border-radius: 10px;
     border-style: solid;
     font-family: 'Abril Fatface', serif;
 }
 
-.background{
-    width: 100%;
-    height: 700px;
-}
+
 
 .logo-text{
+    position: relative;
     font-family: 'Dancing Script', cursive;
     color: white;
-    font-size: 80px;
+    font-size: 75px;
     margin-left: 30px;
     padding-top: 30px;
 }
 
 
 .overlay{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity:0.97;
     background-color:#ccc;
-    width:100%;
-    height:100%;
-    z-index:1000;
     font-size: 65px;
     font-weight: bold;
-    padding-left:650px;    /* adjust this in media queries*/
     transition: 1s;
+    font-family: 'Abril Fatface', serif;
+    border: none;
 }
 
 .x-button{
-    z-index: 1001;
     color: black;
     position: fixed;
     top:20px;
-    left: 1820px;
-    width: 55px;
+    right: 10px;
+    width: 50px;
 }
 
 .food-list{
     z-index: 1001;
     position: fixed;
-    top: 525px;
+    top: 570px;
     left: 40%;
 }
 
-li {
+li {  
     cursor:pointer;
     list-style: none;
     font-size: 20px;
@@ -97,9 +94,131 @@ li {
 }
 
 .mglass{
-    position: fixed;
-    z-index: 1001;
-    left: 570px;
-    top:470px;
+    margin-top: 15px;
+    margin-right: 10px;
+    color: black;
+    font-size: 50px;
 }
 
+.searchdiv{
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 50px;
+}
+
+
+/* MIDDLE PART */
+
+.middle-upper{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+
+.middle-background{
+    width:100vw;
+    /* height:110vh; DODAJ U MEDIA QUERY*/
+    opacity: 0.9;
+}
+
+.statistics{
+    display: flex;
+    position: absolute;
+    z-index: 1000;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: -30px;
+}
+
+.favicon-styling{
+    margin-bottom: 15px;
+}
+
+.singular-statistic{
+    background-color: white;
+    padding: 100px;
+    border-radius: 5px;
+    margin: 10px;
+    text-align: center;
+    color: brown;  
+}
+
+
+.box-paragraph{
+  width: 200px;
+  margin-top: 15px;
+}
+
+section:hover .image-1{
+    background-image: url("././Images/1662733957635.jpeg");
+    background-position: center;
+    color: white;
+    transition-duration: 0.8s;
+}
+
+section:hover .image-2{
+    background-image: url("././Images/IMG_6922_1200x1200.webp");
+    background-position: center;
+    color: white;
+    transition-duration: 0.8s;
+}
+
+section:hover .image-3{
+    background-image: url("././Images/Screenshot_1.png");
+    background-position: center;
+    color: white;
+    transition-duration: 0.8s;
+} 
+
+
+@media all and (max-width: 480px){
+   .welcome_page_text{
+    font-size: 60px;
+   }
+   .text-position2{
+    left:10%
+   }
+   .overlay{
+    font-size: 22px;
+   }
+   .mglass{
+    font-size: 20px;
+   }
+  
+   
+
+   
+}
+
+@media all and (min-width: 481px) and (max-width: 768px) {
+    .welcome_page_text{
+        font-size: 70px;
+       }
+    .overlay{
+        font-size: 35px;
+       }
+    .mglass{
+        font-size: 30px;
+       }
+    .singular-statistic{
+        padding: 105px;
+    }
+ 
+   
+}
+
+@media all and (min-width: 769px) and (max-width: 1024px) {
+    .overlay{
+        font-size: 50px;
+       }
+    
+}
+
+@media all and (min-width: 1025px) and (max-width: 1200px) {
+
+}

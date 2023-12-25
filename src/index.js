@@ -5,7 +5,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Recipe from './Pages/Recipe';
+import Recipe from './components/Recipe';
 import "./styles.css";
 
 

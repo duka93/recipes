@@ -16,7 +16,7 @@ export default function DietIsTheTarget(){
    
     return(
         <div className="diet_is_the_target">
-            <h1 className="big-headers2">Today's best recipes</h1>
+            <h1 className="big-headers2">Today's best recipes!</h1>
         </div>
     )
 }

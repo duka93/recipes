@@ -1,22 +1,69 @@
 import React, { useState } from "react";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { useNavigate } from 'react-router-dom';
 
 export default function DietIsTheTarget(){
-    const[test,setTest] = useState([])
+
+    const testRef = useRef(null);
+    const[test,setTest] = useState()
+
+
+    const[imageContainer,setImageContainer] = useState([])
+    const navigate = useNavigate();
     useEffect(()=>{
         Promise.all([
             fetch("https://www.themealdb.com/api/json/v1/1/random.php").then(response=>response.json()),
             fetch("https://www.themealdb.com/api/json/v1/1/random.php").then(response=>response.json()),
             fetch("https://www.themealdb.com/api/json/v1/1/random.php").then(response=>response.json()),
-          ]).then(response=>setTest(response.map(recipe=>{
-            return recipe.meals[0].idMeal
+            fetch("https://www.themealdb.com/api/json/v1/1/random.php").then(response=>response.json()),
+            fetch("https://www.themealdb.com/api/json/v1/1/random.php").then(response=>response.json()),
+          ]).then(response=>setImageContainer(response.map(recipe=>{
+            return recipe.meals[0]
           })))
     },[])
 
-   
+    const recipeMap = imageContainer.map(recipe=>{
+        const ingredients_list = []
+        for(let i=1; i<21; i++){
+            if(recipe['strIngredient' + i]){
+                ingredients_list.push(recipe['strIngredient' + i])
+            }
+        }
+        const toRecipeComp=()=>{
+        navigate('/selected-recipe', {state:{id:recipe.strMealThumb,name:recipe.strMeal, tags:recipe.strTags, category:recipe.strCategory, area:recipe.strArea, ingredients:ingredients_list, instructions:recipe.strInstructions}});
+            }
+            
+        return <div className="favorites-div"  key={recipe.strMeal}>
+                   <a onClick={()=>{toRecipeComp()}}><img src={recipe.strMealThumb} className="highlight-image"></img></a>
+                   <a onClick={()=>{toRecipeComp()}}><p className="favorites-text">{recipe.strMeal}</p></a> 
+               </div>      
+      })
+    
+    
+
+
+
+
+
+    useEffect(()=>{
+        const observer = new IntersectionObserver((entries)=>{
+            const entry = entries[0]
+            
+            setTest(entry.isIntersecting)
+            
+        })
+        observer.observe(testRef.current)
+    },[])
+
+
+
+
     return(
         <div className="diet_is_the_target">
             <h1 className="big-headers2">Today's best recipes!</h1>
+            <div className={test ? "imageContainer show-favorites":"imageContainer hide-favorites"} ref={testRef}>
+                {recipeMap}
+            </div>
         </div>
     )
 }

@@ -9,7 +9,6 @@ import {useState, useEffect} from "react";
 import x from ".././Images/1544641784.png"
 import { useNavigate } from 'react-router-dom';
 
-
 const slideImages = [
     {
         url:img,
@@ -39,7 +38,6 @@ const spanStyle = {
      color:"#000000",
 }
 
-
 export default function ImageSlider(props) {
     const[recipeList,setRecipeList] = useState([])
     const[query,setQuery] = useState("")
@@ -47,7 +45,6 @@ export default function ImageSlider(props) {
     const[showX,setX] = useState("none")
     const navigate = useNavigate();
   
-   
     useEffect(()=>{
         let sortedRecepies=[]
         fetch(query==="" ? "https://www.themealdb.com/api/json/v1/1/random.php":"https://www.themealdb.com/api/json/v1/1/search.php?f="+query[0]).then(response=>response.json()).then(response=>{
@@ -67,11 +64,17 @@ export default function ImageSlider(props) {
           })},[query])
   
     const recipeMap = recipeList.map(recipe=>{
+      const ingredients_list = []
+        for(let i=1;i<21;i++){
+            if(recipe['strIngredient'+i]){
+                ingredients_list.push(recipe['strIngredient'+i])
+            }
+        }
       const toRecipeComp=()=>{
         document.body.style.overflow = "visible"  
-        navigate('/selected-recipe',{state:{id:recipe.strMealThumb,name:recipe.strMeal}});
+        navigate('/selected-recipe',{state:{id:recipe.strMealThumb,name:recipe.strMeal,tags:recipe.strTags, category:recipe.strCategory, area:recipe.strArea, ingredients:ingredients_list, instructions:recipe.strInstructions}});
           }
-      return <li key={recipe.idMeal}><a onClick={()=>{toRecipeComp()}} key={recipe.idMeal}>{recipe.strMeal}</a></li>
+      return <li key={recipe.idMeal} className='search-list'><a onClick={()=>{toRecipeComp()}} key={recipe.idMeal}>{recipe.strMeal}</a></li>
             
     })
 

@@ -8,7 +8,7 @@
     font-size: 20px;
 }
 
-/* MAKNI COOK SLIKU U MEDIA QUERYIJAMA */
+
 /* width 70% */
 
 
@@ -59,7 +59,7 @@
     position: relative;
     font-family: 'Dancing Script', cursive;
     color: white;
-    font-size: 75px;
+    font-size: 3rem;
     margin-left: 30px;
     padding-top: 30px;
 }
@@ -89,7 +89,7 @@
     left: 40%;
 }
 
-li {  
+.search-list {  
     cursor:pointer;
     list-style: none;
     font-size: 20px;
@@ -147,7 +147,7 @@ li {
 
 .singular-statistic{
     background-color: white;
-    padding: 112px;
+    padding: 5rem;
     border-radius: 5px;
     margin: 10px;
     text-align: center;
@@ -155,7 +155,7 @@ li {
 }
 
 .box-paragraph{
-  width: 200px;
+  width: 10rem;
   margin-top: 15px;
 }
 
@@ -235,27 +235,154 @@ section:hover .image-3{
     cursor: pointer;
 }
 
+.hidden{
+    filter: blur(5px);
+    opacity: 0;
+    transform: translateX(-100%);
+    transition-duration: 1s;
+}
 
-/* DIET IS THE TARGET PART */
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+.hidden:nth-child(2){
+    transition-delay: 200ms;
+}
+.hidden:nth-child(3){
+    transition-delay: 400ms;
+}
+
+/* TODAYS'S FAVORITES PART */
 
 .diet_is_the_target{
-    display: flex;
-    justify-content: center;
+    display: grid;
+    place-items: center;
+    align-items: center;
 }
 
 .big-headers2{
     color: brown;
     font-weight: 1000;
     font-size: 2.5rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.imageContainer{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.favorites-div:hover{
+    opacity: 0.5;
+    transform: scale(1.1);
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+.highlight-image{
+    width: 12.5rem;
+    border-radius: 170px;   
+    margin: 0.5rem;
 }
 
 
+.favorites-div{
+    position: relative;
+}
+
+.favorites-text{
+    position: absolute;
+    margin-top: -8rem;
+    margin-left: 4.8rem;
+    color: white;
+    width:8rem;
+}
+
+.hide-favorites{
+    filter: blur(5px);
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+.show-favorites{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0%);
+    transition-duration: 1s;    
+}
+
+
+/* SINGLE RECIPE PART */
+
+.single-recipe{
+    display: grid;
+    place-items: center;
+    align-items: center;
+    margin-top: 5rem;
+
+}
+
+.upper-div{
+    display: flex;
+}
+
+.upper-div-image{
+    width:  20rem;
+    border-radius: 1rem;
+}
+
+.upper-div-header{
+    width: 20rem;
+    font-size: 2rem;
+    color: brown;
+}
+
+.directions-ingredients{
+    display: grid;
+    place-items: center;
+    align-items: center;
+}
+
+.ingredients-header{
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    color: brown;
+    width: 15rem;
+}
+
+.ingredient-style{
+    margin-top: 1rem;
+    color: brown; 
+}
+
+.ingredient-text{
+    color: black;
+}
+
+.ingredients, .directions{
+    width: 15rem;
+}
+
+.logo-text2{
+    position: relative;
+    font-family: 'Dancing Script', cursive;
+    color: brown;
+    font-size: 3rem;
+    top: 0px;
+    left: 0px;
+}
+
+
+
 @media all and (max-width: 480px){
-    *{
+   *{
         font-size: 14px;
-     }
+    }
     .middle-background{
         height:175vh;
     }
@@ -273,13 +400,24 @@ section:hover .image-3{
    }
    .cook-image{
     display: none;
-}
-.food-list{
-    top:615px;
-}
+    }
+   .food-list{
+        top:615px;
+    }
+    .upper-div{
+        display: block;
+    }
+    .upper-div-image{
+        margin-left: 0rem;
+        margin-top: 2rem;
+    }
+ 
 }
 
 @media all and (min-width: 481px) and (max-width: 768px) {
+    *{
+        font-size: 15px;
+     }
     .welcome_page_text{
         font-size: 70px;
        }
@@ -298,6 +436,13 @@ section:hover .image-3{
     .middle-background{
         height:205vh;
     }
+    .upper-div{
+        display: block;
+    }
+    .upper-div-image{
+        margin-left: 0rem;
+        margin-top: 2rem;
+    }
 }
 
 @media all and (min-width: 769px) and (max-width: 1024px) {
@@ -314,6 +459,12 @@ section:hover .image-3{
 
 @media all and (min-width: 1025px) and (max-width: 1200px) {
     .middle-background{
-        height:195vh;
+        height:155vh;
+    }
+}
+
+@media all and (min-width: 1201px) and (max-width: 1900px) {
+    .middle-background{
+        height:145vh;
     }
 }

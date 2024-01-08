@@ -55,16 +55,36 @@ export default function MiddlePart(){
             }
           };
         }, []);
-      
- 
-    return(
+
+      useEffect(()=>{
+        const hiddenElements = document.querySelectorAll('.hidden')
+        const observer = new IntersectionObserver((entries)=>{
+          entries.forEach((entry)=>{
+              if(entry.isIntersecting){
+                  entry.target.classList.add('show')
+              }
+          })
+      },{threshold:0})
+      hiddenElements.forEach((el)=>observer.observe(el))   
+      },[])
+    
    
+      //   const observer = new IntersectionObserver((entries)=>{
+      //     entries.forEach((entry)=>{
+      //         if(entry.isIntersecting){
+      //             entry.target.classList.add('show')
+      //         }
+      //     })
+      // })
+      // const hiddenElements = document.querySelectorAll('.hidden')
+      // hiddenElements.forEach((el)=>observer.observe(el))   
+    return(
         <div className="middle-upper">
             <img src={background} className='middle-background'></img>
             
             <div className="statistics">
 
-                <section>
+                <section className="hidden">
                 <div className="singular-statistic image-1"> 
                     <i className="fa-solid fa-clipboard-list favicon-styling fa-3x"></i>
                     <h2>VARIETY</h2>
@@ -72,7 +92,7 @@ export default function MiddlePart(){
                 </div>
                 </section>
      
-                <section>
+                <section className="hidden">
                 <div className="singular-statistic image-2" >
                     <i className="fa-solid fa-fire-burner favicon-styling fa-3x"></i>
                     <h2>IGNITE</h2>
@@ -80,7 +100,7 @@ export default function MiddlePart(){
                 </div>
                 </section>
                 
-                <section>
+                <section className="hidden">
                 <div className="singular-statistic image-3">
                     <i className="fa-solid fa-utensils favicon-styling fa-3x"></i>
                     <h2>CLASS</h2>

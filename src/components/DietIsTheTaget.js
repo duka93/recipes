@@ -4,13 +4,13 @@ import { useNavigate } from 'react-router-dom';
 
 export default function DietIsTheTarget(){
 
-    const testRef = useRef(null);
-    const[test,setTest] = useState()
-
-
+    const showRef = useRef(null);
+    const[showFavorite,setShowFavorite] = useState()
     const[imageContainer,setImageContainer] = useState([])
     const navigate = useNavigate();
     useEffect(()=>{
+        const controller = new AbortController();
+        const signal = controller.signal;
         Promise.all([
             fetch("https://www.themealdb.com/api/json/v1/1/random.php").then(response=>response.json()),
             fetch("https://www.themealdb.com/api/json/v1/1/random.php").then(response=>response.json()),
@@ -19,7 +19,17 @@ export default function DietIsTheTarget(){
             fetch("https://www.themealdb.com/api/json/v1/1/random.php").then(response=>response.json()),
           ]).then(response=>setImageContainer(response.map(recipe=>{
             return recipe.meals[0]
-          })))
+          }))).catch(error => {
+            if (error.name === 'AbortError') {
+                console.log('Fetch aborted');
+            } else {
+                console.error('Fetch error:', error);
+            }
+        });
+          
+    return () => {
+        controller.abort(); // This will cancel the fetch requests when the component unmounts
+    };
     },[])
 
     const recipeMap = imageContainer.map(recipe=>{
@@ -39,29 +49,26 @@ export default function DietIsTheTarget(){
                </div>      
       })
     
-    
-
-
-
-
-
     useEffect(()=>{
         const observer = new IntersectionObserver((entries)=>{
             const entry = entries[0]
-            
-            setTest(entry.isIntersecting)
-            
+            if(entry.isIntersecting){
+                return setShowFavorite(entry.isIntersecting)} 
         })
-        observer.observe(testRef.current)
+        if (showRef.current) {
+            observer.observe(showRef.current);
+          }
+          return () => {    
+            if (showRef.current) {
+              observer.unobserve(showRef.current);
+            }
+          };
     },[])
-
-
-
 
     return(
         <div className="diet_is_the_target">
             <h1 className="big-headers2">Today's best recipes!</h1>
-            <div className={test ? "imageContainer show-favorites":"imageContainer hide-favorites"} ref={testRef}>
+            <div className={showFavorite ? "imageContainer show-favorites":"imageContainer hide-favorites"} ref={showRef}>
                 {recipeMap}
             </div>
         </div>

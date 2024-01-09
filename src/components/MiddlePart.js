@@ -8,7 +8,9 @@ export default function MiddlePart(){
         const[count, setCount] = useState(0);
         const[count2,setCount2] = useState(50)
         const[count3,setCount3] = useState(50)
+        const[toggleAbout,setToggleAbout] = useState();
         const countRef = useRef(null);
+        const showAboutRef = useRef(null);
         const targetCount = 450;
         const targetCount2 = 1600; 
         const targetCount3 = 2500;
@@ -41,7 +43,7 @@ export default function MiddlePart(){
                       return prevCount;
                     }
                   });
-              }, 50); 
+              }, 80); 
             }
           }, { threshold: 1 });
       
@@ -64,20 +66,32 @@ export default function MiddlePart(){
                   entry.target.classList.add('show')
               }
           })
-      },{threshold:0})
-      hiddenElements.forEach((el)=>observer.observe(el))   
+      },{threshold:0.5})
+      if (showAboutRef.current) {
+        hiddenElements.forEach((el)=>observer.observe(el))
+      }
+      return ()=>{
+        hiddenElements.forEach((el)=>observer.unobserve(el))
+      }   
       },[])
     
-   
-      //   const observer = new IntersectionObserver((entries)=>{
-      //     entries.forEach((entry)=>{
-      //         if(entry.isIntersecting){
-      //             entry.target.classList.add('show')
-      //         }
-      //     })
-      // })
-      // const hiddenElements = document.querySelectorAll('.hidden')
-      // hiddenElements.forEach((el)=>observer.observe(el))   
+     useEffect(()=>{
+      const observer = new IntersectionObserver((entries)=>{
+          const entry = entries[0]
+          if(entry.isIntersecting){
+             return setToggleAbout(entry.isIntersecting)} 
+      })
+ 
+        observer.observe(showAboutRef.current);
+     
+      return () => {
+        if (showAboutRef.current) {
+          observer.unobserve(showAboutRef.current);
+        }
+      };
+  },[])
+  
+
     return(
         <div className="middle-upper">
             <img src={background} className='middle-background'></img>
@@ -108,7 +122,7 @@ export default function MiddlePart(){
                 </div>
                 </section>
 
-                <div className="about-us">
+                <div className={toggleAbout ? "about-us show1" : "about-us hidden1"} ref={showAboutRef}>
                     <h1 className="big-headers">About us</h1>
                     <h2 className="medium-headers">We started in 2023 with a simple goal: "To take your cooking to the next level"</h2>
                     <p className="about-us-text">We wanted to make our dream your reality and help you with your cooking goals in a most efficient way possible. </p>

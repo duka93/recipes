@@ -66,15 +66,12 @@
 
 
 .overlay{
-    position: relative;
-    display: flex;
-    justify-content: center;
     background-color:#ccc;
     font-size: 65px;
     font-weight: bold;
     transition: 1s;
     font-family: 'Abril Fatface', serif;
-    border: none;
+    border: 0;
 }
 
 .x-button{
@@ -87,16 +84,16 @@
 
 .food-list{
     z-index: 1001;
-    position: absolute;
-    top: 4.5rem;
-    left: 30%;
+    position: fixed;
+    top: 100%;
+    left: 40%;
 }
 
 .search-list {  
     cursor:pointer;
     list-style: none;
     font-size: 1rem;
-    word-spacing: 3px;
+    word-spacing: 1px;
     font-weight: normal;
     color: rgb(83, 78, 78);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -478,7 +475,7 @@ footer{
         font-size: 14px;
     }
     .middle-background{
-        height:190vh;
+        height:175vh;
     }
    .welcome_page_text{
     font-size: 60px;

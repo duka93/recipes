@@ -66,6 +66,9 @@
 
 
 .overlay{
+    position: relative;
+    display: flex;
+    justify-content: center;
     background-color:#ccc;
     font-size: 65px;
     font-weight: bold;
@@ -84,17 +87,17 @@
 
 .food-list{
     z-index: 1001;
-    position: fixed;
-    top: 570px;
-    left: 40%;
+    position: absolute;
+    top: 4.5rem;
+    left: 30%;
 }
 
 .search-list {  
     cursor:pointer;
     list-style: none;
-    font-size: 20px;
-    word-spacing: 5px;
-    font-weight: normal !important;
+    font-size: 1rem;
+    word-spacing: 3px;
+    font-weight: normal;
     color: rgb(83, 78, 78);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -475,7 +478,7 @@ footer{
         font-size: 14px;
     }
     .middle-background{
-        height:175vh;
+        height:190vh;
     }
    .welcome_page_text{
     font-size: 60px;

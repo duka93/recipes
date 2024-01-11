@@ -106,13 +106,14 @@ export default function ImageSlider(props) {
                          <div className={!toggleInput ? 'searchdiv' : ""}>
                             <i className="fa-solid fa-magnifying-glass mglass fa" style={{display:showX}}></i>
                             <input  className={toggleInput ? `input`: `overlay`}  name={props.name} value={props.query} onChange={(e)=>setQuery(e.target.value)} placeholder='Find your favorite recipe' onClick={inputEnlarge}></input>
+                            <ul className='food-list'>{recipeMap}</ul>
                          </div>
                          </span>
 
                       </div>
                                                                                                                                                                                                                                                                                                                               
                       <a href=''><img className='x-button' style={{display:showX}} src={x} onClick={()=>setX("none")}></img></a>   {/*part which gets rid of x when the input is clicked*/}      
-                      <ul className='food-list'>{recipeMap}</ul>
+                     
                 </div>
                 
             ))}

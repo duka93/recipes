@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import {
   createBrowserRouter,
-  RouterProvider,
+  RouterProvider,createHashRouter
 } from "react-router-dom";
 import Recipe from './components/Recipe';
 import "./styles.css";
 
 
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <App/>,
@@ -22,7 +22,9 @@ const router = createBrowserRouter([
 ]);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <RouterProvider router={router}/>
+  <React.StrictMode>
+  <RouterProvider router={router} />
+</React.StrictMode>
 );
 
 

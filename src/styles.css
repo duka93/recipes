@@ -123,7 +123,9 @@
     display: grid;
     place-items: center;
     align-items: center;
-    background-color:rgba(127,90,64,255);
+   background-size: cover;
+    background-image: url("Images/Screenshot_4.png");
+    background-repeat: no-repeat;
 }
 
 .statistics{

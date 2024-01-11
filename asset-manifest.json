@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/recipes/static/css/main.996871df.css",
-    "main.js": "/recipes/static/js/main.438b22ec.js",
+    "main.js": "/recipes/static/js/main.0928c506.js",
     "static/media/flat-lay-brazilian-food-meal-with-copy-space.jpg": "/recipes/static/media/flat-lay-brazilian-food-meal-with-copy-space.acc7d5a08eb04cf9b589.jpg",
     "static/media/Screenshot_1.png": "/recipes/static/media/Screenshot_1.6cc501e9ae201d0368eb.png",
     "static/media/top-view-chocolate-stuff_23-2148019483.jpg": "/recipes/static/media/top-view-chocolate-stuff_23-2148019483.1eb91421f059eea1a9bf.jpg",
@@ -13,10 +13,10 @@
     "static/media/1544641784.png": "/recipes/static/media/1544641784.ba59f0270c5437ef2491.png",
     "index.html": "/recipes/index.html",
     "main.996871df.css.map": "/recipes/static/css/main.996871df.css.map",
-    "main.438b22ec.js.map": "/recipes/static/js/main.438b22ec.js.map"
+    "main.0928c506.js.map": "/recipes/static/js/main.0928c506.js.map"
   },
   "entrypoints": [
     "static/css/main.996871df.css",
-    "static/js/main.438b22ec.js"
+    "static/js/main.0928c506.js"
   ]
 }

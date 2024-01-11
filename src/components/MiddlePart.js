@@ -66,7 +66,7 @@ export default function MiddlePart(){
                   entry.target.classList.add('show')
               }
           })
-      },{threshold:0.5})
+      })
       if (showAboutRef.current) {
         hiddenElements.forEach((el)=>observer.observe(el))
       }
@@ -81,9 +81,9 @@ export default function MiddlePart(){
           if(entry.isIntersecting){
              return setToggleAbout(entry.isIntersecting)} 
       })
- 
+      if (showAboutRef.current) {
         observer.observe(showAboutRef.current);
-     
+      }     
       return () => {
         if (showAboutRef.current) {
           observer.unobserve(showAboutRef.current);
@@ -96,7 +96,7 @@ export default function MiddlePart(){
         <div className="middle-upper">
             <img src={background} className='middle-background'></img>
             
-            <div className="statistics">
+            <div className="statistics" id="our-values">
 
                 <section className="hidden">
                 <div className="singular-statistic image-1"> 
@@ -122,7 +122,7 @@ export default function MiddlePart(){
                 </div>
                 </section>
 
-                <div className={toggleAbout ? "about-us show1" : "about-us hidden1"} ref={showAboutRef}>
+                <div className={toggleAbout ? "about-us show1" : "about-us hidden1"} id="about-us" ref={showAboutRef}>
                     <h1 className="big-headers">About us</h1>
                     <h2 className="medium-headers">We started in 2023 with a simple goal: "To take your cooking to the next level"</h2>
                     <p className="about-us-text">We wanted to make our dream your reality and help you with your cooking goals in a most efficient way possible. </p>

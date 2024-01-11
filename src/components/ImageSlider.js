@@ -46,6 +46,7 @@ export default function ImageSlider(props) {
     const navigate = useNavigate();
   
     useEffect(()=>{
+        let ignore = false;
         let sortedRecepies=[]
         fetch(query==="" ? "https://www.themealdb.com/api/json/v1/1/random.php":"https://www.themealdb.com/api/json/v1/1/search.php?f="+query[0]).then(response=>response.json()).then(response=>{
         
@@ -55,13 +56,19 @@ export default function ImageSlider(props) {
                   sortedRecepies.push(response.meals[i])
                 }
             }
-            setRecipeList(sortedRecepies)
+            if(!ignore){
+              setRecipeList(sortedRecepies)
+            }
           }
           else{
             setRecipeList([])
           }
-        
-          })},[query])
+          
+          })
+          return ()=>{
+            ignore = true;
+          }
+        },[query])
   
     const recipeMap = recipeList.map(recipe=>{
       const ingredients_list = []
@@ -93,7 +100,7 @@ export default function ImageSlider(props) {
                 <div key={index}>
 
                       <div style={toggleInput ? {...divStyle, backgroundImage:`url(${image.url})`} : {...divStyle, backgroundColor:"#ccc"}}>
-                         <h1 className='logo-text'>Grandma's Kitchen</h1>
+                         <h1 className='logo-text' id='home-page'>Grandma's Kitchen</h1>
 
                          <span className={`${image.text_position} welcome_page_text`}> {toggleInput && image.caption}
                          <div className={!toggleInput ? 'searchdiv' : ""}>
@@ -114,3 +121,8 @@ export default function ImageSlider(props) {
     </div>
   )
 }
+
+
+
+
+

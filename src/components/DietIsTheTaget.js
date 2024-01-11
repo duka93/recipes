@@ -8,28 +8,25 @@ export default function DietIsTheTarget(){
     const[showFavorite,setShowFavorite] = useState()
     const[imageContainer,setImageContainer] = useState([])
     const navigate = useNavigate();
+    
     useEffect(()=>{
-        const controller = new AbortController();
-        const signal = controller.signal;
+        let ignore = false;
         Promise.all([
             fetch("https://www.themealdb.com/api/json/v1/1/random.php").then(response=>response.json()),
             fetch("https://www.themealdb.com/api/json/v1/1/random.php").then(response=>response.json()),
             fetch("https://www.themealdb.com/api/json/v1/1/random.php").then(response=>response.json()),
             fetch("https://www.themealdb.com/api/json/v1/1/random.php").then(response=>response.json()),
             fetch("https://www.themealdb.com/api/json/v1/1/random.php").then(response=>response.json()),
-          ]).then(response=>setImageContainer(response.map(recipe=>{
-            return recipe.meals[0]
-          }))).catch(error => {
-            if (error.name === 'AbortError') {
-                console.log('Fetch aborted');
-            } else {
-                console.error('Fetch error:', error);
+          ]).then(response=>{if(!ignore){
+                                setImageContainer(response.map(recipe=>{
+                                                   return recipe.meals[0]})
+                                                 )
+                                        }
+                            }
+                 )
+            return ()=>{
+                ignore=true;
             }
-        });
-          
-    return () => {
-        controller.abort(); // This will cancel the fetch requests when the component unmounts
-    };
     },[])
 
     const recipeMap = imageContainer.map(recipe=>{

@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/recipes/static/css/main.ac5a550e.css",
+    "main.css": "/recipes/static/css/main.dd5741d3.css",
     "main.js": "/recipes/static/js/main.ed2d3867.js",
     "static/media/flat-lay-brazilian-food-meal-with-copy-space.jpg": "/recipes/static/media/flat-lay-brazilian-food-meal-with-copy-space.acc7d5a08eb04cf9b589.jpg",
     "static/media/Screenshot_1.png": "/recipes/static/media/Screenshot_1.6cc501e9ae201d0368eb.png",
@@ -12,11 +12,11 @@
     "static/media/JAMESON_APRON_C_CANVAS_BROWN_01-removebg-preview.png": "/recipes/static/media/JAMESON_APRON_C_CANVAS_BROWN_01-removebg-preview.7e7bc8dab8437e7174d5.png",
     "static/media/1544641784.png": "/recipes/static/media/1544641784.ba59f0270c5437ef2491.png",
     "index.html": "/recipes/index.html",
-    "main.ac5a550e.css.map": "/recipes/static/css/main.ac5a550e.css.map",
+    "main.dd5741d3.css.map": "/recipes/static/css/main.dd5741d3.css.map",
     "main.ed2d3867.js.map": "/recipes/static/js/main.ed2d3867.js.map"
   },
   "entrypoints": [
-    "static/css/main.ac5a550e.css",
+    "static/css/main.dd5741d3.css",
     "static/js/main.ed2d3867.js"
   ]
 }

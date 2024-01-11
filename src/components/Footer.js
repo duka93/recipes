@@ -6,10 +6,9 @@ export default function Footer(){
         <footer>
              <h1 className='logo-text3'>Grandma's Kitchen</h1>
              <div className="footer-items">
-                <a className="footer-item" href="#home-page"><i class="fa-solid fa-utensils"></i> Home</a>
-                <a className="footer-item" href="#our-values"><i class="fa-solid fa-utensils"></i> Our values</a>
-                <a className="footer-item" href="#about-us"><i class="fa-solid fa-utensils"></i> About us</a>
-                <a className="footer-item" href="mailto:dusantime@gmail.com"><i class="fa-solid fa-utensils"></i> Contact</a>
+                <a className="footer-item" href="index.html"><i className="fa-solid fa-utensils"></i> Home</a>
+                <a className="footer-item" href="https://www.themealdb.com/" target="blank"><i className="fa-solid fa-utensils"></i> Api</a>
+                <a className="footer-item" href="mailto:dusantime@gmail.com"><i className="fa-solid fa-utensils"></i> Contact</a>
              </div>
              <ul className="social-media">
                 <li id="fb"><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook-square fa-1x"></i></a></li>

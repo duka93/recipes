@@ -500,6 +500,9 @@ footer{
         margin-left: 0rem;
         margin-top: 2rem;
     }
+    .input{
+        display: none;
+    }
  
 }
 
@@ -532,6 +535,10 @@ footer{
         margin-left: 0rem;
         margin-top: 2rem;
     }
+    .input{
+        display: none;
+    }
+ 
 }
 
 @media all and (min-width: 769px) and (max-width: 1024px) {

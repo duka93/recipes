@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/recipes/static/css/main.996871df.css",
+    "main.js": "/recipes/static/js/main.438b22ec.js",
+    "static/media/flat-lay-brazilian-food-meal-with-copy-space.jpg": "/recipes/static/media/flat-lay-brazilian-food-meal-with-copy-space.acc7d5a08eb04cf9b589.jpg",
+    "static/media/Screenshot_1.png": "/recipes/static/media/Screenshot_1.6cc501e9ae201d0368eb.png",
+    "static/media/top-view-chocolate-stuff_23-2148019483.jpg": "/recipes/static/media/top-view-chocolate-stuff_23-2148019483.1eb91421f059eea1a9bf.jpg",
+    "static/media/Screenshot_4.png": "/recipes/static/media/Screenshot_4.ff9cce0e1ac2c9dc03ee.png",
+    "static/media/IMG_6922_1200x1200.webp": "/recipes/static/media/IMG_6922_1200x1200.b0d7eae993b0eb20d396.webp",
+    "static/media/1662733957635.jpeg": "/recipes/static/media/1662733957635.715b8a4d550e2f2cb606.jpeg",
+    "static/media/concentrated-man-baker-standing-bakery-near-bread_171337-16129.jpg": "/recipes/static/media/concentrated-man-baker-standing-bakery-near-bread_171337-16129.d80be665c900da5c7a0d.jpg",
+    "static/media/JAMESON_APRON_C_CANVAS_BROWN_01-removebg-preview.png": "/recipes/static/media/JAMESON_APRON_C_CANVAS_BROWN_01-removebg-preview.7e7bc8dab8437e7174d5.png",
+    "static/media/1544641784.png": "/recipes/static/media/1544641784.ba59f0270c5437ef2491.png",
+    "index.html": "/recipes/index.html",
+    "main.996871df.css.map": "/recipes/static/css/main.996871df.css.map",
+    "main.438b22ec.js.map": "/recipes/static/js/main.438b22ec.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.996871df.css",
+    "static/js/main.438b22ec.js"
+  ]
+}

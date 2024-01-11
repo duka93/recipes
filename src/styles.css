@@ -85,7 +85,7 @@
 .food-list{
     z-index: 1001;
     position: fixed;
-    top: -10%;
+    top: 100%;
     left: 40%;
 }
 
@@ -500,9 +500,9 @@ footer{
         margin-left: 0rem;
         margin-top: 2rem;
     }
-    /* .input{
+    .input{
         display: none;
-    } */
+    }
  
 }
 
@@ -535,9 +535,9 @@ footer{
         margin-left: 0rem;
         margin-top: 2rem;
     }
-    /* .input{
+    .input{
         display: none;
-    } */
+    }
  
 }
 

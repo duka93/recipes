@@ -94,7 +94,7 @@ export default function MiddlePart(){
 
     return(
         <div className="middle-upper">
-            <img src={background} className='middle-background'></img>
+            
             
             <div className="statistics" id="our-values">
 

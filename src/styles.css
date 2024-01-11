@@ -119,21 +119,15 @@
 
 /* MIDDLE PART */
 
-.middle-upper{
-    position: relative;
-    display: flex;
-    justify-content: center;
-}
-
-.middle-background{
-    width:100vw;
-    height:115vh;
-    opacity: 0.9;
+.middle-upper{  
+    display: grid;
+    place-items: center;
+    align-items: center;
+    background-color:rgba(127,90,64,255);
 }
 
 .statistics{
     display: flex;
-    position: absolute;
     z-index: 1000;
     flex-wrap: wrap;
     justify-content: center;
@@ -189,7 +183,7 @@ section:hover .image-3{
 .cook-image{
     position: absolute;
     left: 70%;
-    top: -10%;
+    top: -20%;
     height: 115%;
 }
 
@@ -470,12 +464,17 @@ footer{
 }
 
 
+#about-us{
+    padding-bottom:3rem;
+}
+
+
 @media all and (max-width: 480px){
    *{
         font-size: 14px;
     }
     .middle-background{
-        height:190vh;
+        height:200vh;
     }
    .welcome_page_text{
     font-size: 60px;
@@ -500,9 +499,9 @@ footer{
         margin-left: 0rem;
         margin-top: 2rem;
     }
-    .input{
+    /* .input{
         display: none;
-    }
+    } */
  
 }
 
@@ -560,6 +559,12 @@ footer{
 }
 
 @media all and (min-width: 1201px) and (max-width: 1900px) {
+    .middle-background{
+        height:145vh;
+    }
+}
+
+@media all and (min-width: 1901px) and (max-width: 2500px) {
     .middle-background{
         height:145vh;
     }

@@ -85,7 +85,7 @@
 .food-list{
     z-index: 1001;
     position: fixed;
-    top: 100%;
+    top: -10%;
     left: 40%;
 }
 
@@ -475,7 +475,7 @@ footer{
         font-size: 14px;
     }
     .middle-background{
-        height:175vh;
+        height:190vh;
     }
    .welcome_page_text{
     font-size: 60px;
